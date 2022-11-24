@@ -1,5 +1,5 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js';
-import { DragControls } from 'https://cdn.jsdelivr.net/npm/three@0.134.0/examples/jsm/controls/DragControls.js';
+import * as THREE from 'https://unpkg.com/three@0.134.0/build/three.module.js';
+import { DragControls } from 'https://unpkg.com/three@0.134.0/examples/jsm/controls/DragControls.js';
 
 //start button
 const start = document.getElementById('play');
