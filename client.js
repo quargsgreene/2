@@ -50,7 +50,7 @@ function main(){
 
     //play sound
 
-    const soundFile = 'sound/sex-appeal.mp3';
+    const soundFile = 'sex-appeal.mp3';
     const audioLoader = new THREE.AudioLoader();
     const sound = new THREE.PositionalAudio(listener);
     audioLoader.load(soundFile, (buffer) => {
@@ -63,18 +63,18 @@ function main(){
     //skin
     const texLoader = new THREE.TextureLoader();
 
-    const texture1 = texLoader.load('images/texture-1.jpg', (texture) => {
+    const texture1 = texLoader.load('texture-1.jpg', (texture) => {
         texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
         texture.minFilter = THREE.LinearFilter;
     });
 
-    const texture2 = texLoader.load('images/texture-2.jpg', (texture) => {
+    const texture2 = texLoader.load('texture-2.jpg', (texture) => {
         texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
         texture.minFilter = THREE.LinearFilter;
 
     });
 
-    const texture3 = texLoader.load('images/texture-3.jpg', (texture) => {
+    const texture3 = texLoader.load('texture-3.jpg', (texture) => {
         texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
         texture.minFilter = THREE.LinearFilter;
     });
