@@ -1,25 +1,16 @@
 <!DOCTYPE html><html>
     <head>
-        <meta charset="utf-8">
+
         <title>Sex Appeal Meat Suit Scrambler</title>
+        <meta charset="utf-8">
         <meta name ="viewport" content="width=device-width, initial-scale=1">
-        <script type="importmap" >
-  
-            {
-                "imports": {
-                    "three": "./build/three.module.js",
-                    "three/examples/jsm/controls/DragControls": "./jsm/controls/DragControls.js",
-                    "three/examples/jsm/postprocessing/RenderPass": "./jsm/postprocessing/RenderPass.js"
-                }
-            }
-        </script>
     </head>
     <body>
         <button id="play">Scramble parts with your cursor and share your results. Click anywhere in this window to let the fun commence! Background vibrations included.</button>
         <audio id ="song" preload="auto">
-            <source src= "/sounds/sex-appeal.mp3" type="audio/mpeg">
+            <source src= "sex-appeal.mp3" type="audio/mpeg">
         </audio>
-       
+
         <canvas id="c"></canvas>
         <script type="module" src="client.js"></script>
 
@@ -32,7 +23,7 @@
             height:100%;
             overflow: hidden;
         }
-      
+
         #c{
             margin:0;
             padding:0;
@@ -54,7 +45,7 @@
             font-family: "Helvetica";
             font-size: 3em;
             color: #fffdd4;
-            background-image: url("images/start.jpeg");
+            background-image: url("start.jpeg");
         }
 
         .invisible{

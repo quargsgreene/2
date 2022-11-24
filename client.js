@@ -1,5 +1,5 @@
-import * as THREE from 'three';
-import { DragControls } from 'three/examples/jsm/controls/DragControls';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js';
+import { DragControls } from 'https://cdn.jsdelivr.net/npm/three@0.134.0/examples/jsm/controls/DragControls.js';
 
 //start button
 const start = document.getElementById('play');
@@ -14,7 +14,7 @@ function main(){
     const canvas = document.querySelector("#c");
     const listener = new THREE.AudioListener;
     const renderer = new THREE.WebGLRenderer({
-        canvas, 
+        canvas,
         antialias:true,
         preserveDrawingBuffer: true,
 
@@ -50,31 +50,31 @@ function main(){
 
     //play sound
 
-    const soundFile = '/sound/sex-appeal.mp3';
+    const soundFile = 'sex-appeal.mp3';
     const audioLoader = new THREE.AudioLoader();
     const sound = new THREE.PositionalAudio(listener);
     audioLoader.load(soundFile, (buffer) => {
         sound.setBuffer(buffer);
         sound.setLoop(true);
         sound.play();
-   
+
     });
 
     //skin
     const texLoader = new THREE.TextureLoader();
 
-    const texture1 = texLoader.load('images/texture-1.jpg', (texture) => {
+    const texture1 = texLoader.load('texture-1.jpg', (texture) => {
         texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
         texture.minFilter = THREE.LinearFilter;
     });
 
-    const texture2 = texLoader.load('images/texture-2.jpg', (texture) => {
+    const texture2 = texLoader.load('texture-2.jpg', (texture) => {
         texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
         texture.minFilter = THREE.LinearFilter;
 
     });
 
-    const texture3 = texLoader.load('images/texture-3.jpg', (texture) => {
+    const texture3 = texLoader.load('texture-3.jpg', (texture) => {
         texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
         texture.minFilter = THREE.LinearFilter;
     });
@@ -83,7 +83,7 @@ function main(){
     const size = 0.05;
 
     const bodyParts = [];
-    
+
     const pelvisSphereRadius = 10 * size;
     const widthSegments = 64;
     const heightSegments = 32;
@@ -93,7 +93,7 @@ function main(){
     pelvisSphereMesh.position.set(0,0,0);
     scene.add(pelvisSphereMesh);
     bodyParts.push(pelvisSphereMesh);
-  
+
     const pelvisTorusKnotRadius = 15 * size;;
     const pelvisTorusKnotTubeRadius = 0.6 * size;
     const tubularSegments = 64;
@@ -110,23 +110,23 @@ function main(){
     class PeenCurve extends THREE.Curve  {
 
         constructor(scale = 1){
-    
+
             super();
-    
+
             this.scale = scale;
         }
-    
+
         getPoint(t, optionalTarget = new THREE.Vector3()){
-    
+
             const tx = 3 * Math.cos(10 * Math.PI * t);
             const ty = 20 * t;
             const tz = 3 * Math.sin(10 * Math.PI * t);
-    
-            return optionalTarget.set(tx, ty, tz).multiplyScalar(this.scale); 
+
+            return optionalTarget.set(tx, ty, tz).multiplyScalar(this.scale);
         }
-    
+
     }
-    
+
     const peenPath = new PeenCurve(size);
     const peenRadius = size;
     const peenSegments = 100;
@@ -138,7 +138,7 @@ function main(){
     peenMesh.rotation.x = 3 * Math.PI / 4;
     scene.add(peenMesh);
     bodyParts.push(peenMesh);
-  
+
     const tipRadius1 = 2 * size;
     const tipSphereMaterial1 = new THREE.MeshBasicMaterial({map: texture2});
     const tipSphereGeometry1 = new THREE.SphereGeometry(tipRadius1, widthSegments, heightSegments);
@@ -197,7 +197,7 @@ function main(){
     buttNippleTorusKnotMesh.position.set(size * 11.62, size * 2.1, size * -14.38);
     scene.add(buttNippleTorusKnotMesh);
     bodyParts.push(buttNippleTorusKnotMesh);
-   
+
     const torsoShape = new THREE.Shape();
     const x = 0;
     const y = size * 15;
@@ -388,9 +388,9 @@ function main(){
         time *= 0.001;
 
         renderer.render(scene, camera);
-       
+
         requestAnimationFrame(render);
-       
+
     }
 
 }
