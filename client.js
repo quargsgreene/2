@@ -107,7 +107,7 @@ function main(){
     scene.add(pelvisTorusKnotMesh);
     bodyParts.push(pelvisTorusKnotMesh);
 
-    class PeenCurve extends THREE.Curve  {
+    class spiralLimbCurve extends THREE.Curve  {
 
         constructor(scale = 1){
 
@@ -127,17 +127,17 @@ function main(){
 
     }
 
-    const peenPath = new PeenCurve(size);
-    const peenRadius = size;
-    const peenSegments = 100;
-    const peenRadialSegments = 20;
-    const peenGeometry = new THREE.TubeGeometry(peenPath, peenSegments, peenRadius, peenRadialSegments, false);
-    const peenMaterial = new THREE.MeshPhongMaterial( { color: 0x1157b3 } );
-    const peenMesh = new THREE.Mesh( peenGeometry, peenMaterial );
-    peenMesh.position.set(size * 0.62, size * -8.43, size * 10.64);
-    peenMesh.rotation.x = 3 * Math.PI / 4;
-    scene.add(peenMesh);
-    bodyParts.push(peenMesh);
+    const SpiralLimbPath = new spiralLimbCurve(size);
+    const spiralLimbRadius = size;
+    const spiralLimbSegments = 100;
+    const spiralLimbRadialSegments = 20;
+    const spiralLimbGeometry = new THREE.TubeGeometry(SpiralLimbPath, spiralLimbSegments, spiralLimbRadius, spiralLimbRadialSegments, false);
+    const spiralLimbMaterial = new THREE.MeshPhongMaterial( { color: 0x1157b3 } );
+    const spiralLimbMesh = new THREE.Mesh( spiralLimbGeometry, spiralLimbMaterial );
+    spiralLimbMesh.position.set(size * 0.62, size * -8.43, size * 10.64);
+    spiralLimbMesh.rotation.x = 3 * Math.PI / 4;
+    scene.add(spiralLimbMesh);
+    bodyParts.push(spiralLimbMesh);
 
     const tipRadius1 = 2 * size;
     const tipSphereMaterial1 = new THREE.MeshBasicMaterial({map: texture2});
