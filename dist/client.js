@@ -155,21 +155,21 @@ function main(){
     scene.add(tipMesh2);
     bodyParts.push(tipMesh2);
 
-    const nutRadius1 = 4 * size;
-    const nutSphereMaterial1 = new THREE.MeshBasicMaterial({map: texture2});
-    const nutSphereGeometry1 = new THREE.SphereGeometry(nutRadius1, widthSegments, heightSegments);
-    const nutMesh1 = new THREE.Mesh(nutSphereGeometry1, nutSphereMaterial1);
-    nutMesh1.position.set(size * 2.07, size * -12.43, 0);
-    scene.add(nutMesh1);
-    bodyParts.push(nutMesh1);
+    const cystRadius1 = 4 * size;
+    const cystSphereMaterial1 = new THREE.MeshBasicMaterial({map: texture2});
+    const cystSphereGeometry1 = new THREE.SphereGeometry(cystRadius1, widthSegments, heightSegments);
+    const cystMesh1 = new THREE.Mesh(cystSphereGeometry1, cystSphereMaterial1);
+    cystMesh1.position.set(size * 2.07, size * -12.43, 0);
+    scene.add(cystMesh1);
+    bodyParts.push(cystMesh1);
 
-    const nutRadius2 = 3 * size;
-    const nutSphereMaterial2 = new THREE.MeshBasicMaterial({map: texture2});
-    const nutSphereGeometry2 = new THREE.SphereGeometry(nutRadius2, widthSegments, heightSegments);
-    const nutMesh2 = new THREE.Mesh(nutSphereGeometry2, nutSphereMaterial2);
-    nutMesh2.position.set(size * -3.01, size * -10.3, 0);
-    scene.add(nutMesh2);
-    bodyParts.push(nutMesh2);
+    const cystRadius2 = 3 * size;
+    const cystSphereMaterial2 = new THREE.MeshBasicMaterial({map: texture2});
+    const cystSphereGeometry2 = new THREE.SphereGeometry(cystRadius2, widthSegments, heightSegments);
+    const cystMesh2 = new THREE.Mesh(cystSphereGeometry2, cystSphereMaterial2);
+    cystMesh2.position.set(size * -3.01, size * -10.3, 0);
+    scene.add(cystMesh2);
+    bodyParts.push(cystMesh2);
 
     const buttRadius1 = 8 * size;
     const buttSphereMaterial1 = new THREE.MeshBasicMaterial({map: texture2});
